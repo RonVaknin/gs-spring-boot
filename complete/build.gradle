@@ -25,16 +25,20 @@ dependencies {
 }
 
 
+distZip {
+	into(project.name) {
+		from 'complete'
+//		include 'conf/*'
+	}
+}
 
-
+installDist {
+	into(project.name) {
+		from "complete"
+//		include "conf/**"
+	}
+}
 
 test {
 	useJUnitPlatform()
-}
-
-distZip {
-	into(project.name) {
-		from "."
-//		include "conf/**"
-	}
 }
