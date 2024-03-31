@@ -26,9 +26,9 @@ jobs:
       - name: Build Complete with Gradle
         working-directory: ./complete
         run: |
-          ./gradlew build --no-daemon ./distZip
+          ./gradlew build --no-daemon distZip
 
       - name: Log Build Size
         run: |
-          FILE_SIZE=$(stat -c %s ./distZip/your-app.zip)
+          FILE_SIZE=$(stat -c %s ./distZip)
           echo "File size: $FILE_SIZE bytes"
