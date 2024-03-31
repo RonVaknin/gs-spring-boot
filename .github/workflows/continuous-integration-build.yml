@@ -28,7 +28,11 @@ jobs:
         run: |
           ./gradlew build --no-daemon distZip
 
-      - name: Log Build Size
-        run:
-          stat -c
-
+      - name: Deploy to S3
+        uses: prewk/s3-cp-action@v2
+        with:
+          aws_access_key_id: ${{ secrets.S3_ACCESS_KEY }}
+          aws_secret_access_key: ${{ secrets.S3_SECRET_ACCESS_SECRET }}
+          source: app/build/distributions/app.zip
+          dest: 's3://${{ secrets.S3_BUCKET_NAME}}/app-master.zip'
+          aws_region: 'us-east-1'

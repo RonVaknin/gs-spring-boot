@@ -25,7 +25,8 @@ dependencies {
 
 distZip {
 	into(project.name) {
-		from "./complete"
+		from "./"
+		archiveFileName = "${project.name}.zip"
 //		include "conf/**"
 	}
 }
