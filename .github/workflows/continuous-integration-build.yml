@@ -30,5 +30,5 @@ jobs:
 
       - name: Log Build Size
         run: |
-          FILE_SIZE=$(stat -c %s ./distZip)
+          FILE_SIZE=$1
           echo "File size: $FILE_SIZE bytes"
