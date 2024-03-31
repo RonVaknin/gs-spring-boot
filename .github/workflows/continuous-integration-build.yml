@@ -28,7 +28,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build Complete with Gradle
-#        working-directory: ./complete
+        working-directory: ./complete
         run:
           ./gradlew --no-daemon distZip
 
