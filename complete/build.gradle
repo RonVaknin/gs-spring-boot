@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 sourceCompatibility = '17'
 
 repositories {
@@ -23,12 +23,15 @@ dependencies {
 	// end::tests[]
 }
 
+
+
 distZip {
-	into(project.name) {
-		from "."
-		archiveFileName = "${project.name}.zip"
+//	into(project.name) {
+//		from "./"
+//		archiveFileName = "${project.name}.zip"
 //		include "conf/**"
-	}
+//	}
+	from("./")
 }
 
 
