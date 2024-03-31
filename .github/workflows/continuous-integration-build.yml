@@ -29,6 +29,6 @@ jobs:
           ./gradlew build --no-daemon distZip
 
       - name: Log Build Size
-        run: |
-          FILE_SIZE=$1
-          echo "File size: $FILE_SIZE bytes"
+        run:
+          stat -c %s
+
