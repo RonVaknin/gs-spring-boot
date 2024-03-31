@@ -26,7 +26,7 @@ jobs:
       - name: Build Complete with Gradle
         working-directory: ./complete
         run: |
-          ./gradlew build --no-daemon distZip
+          ./gradlew --no-daemon distZip
 
       - name: Deploy to S3
         uses: prewk/s3-cp-action@v2
