@@ -28,9 +28,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Build Complete with Gradle
-        working-directory: ./complete
+#        working-directory: ./complete
         run:
-          ./gradlew --no-daemon distZip
+          ./complete/gradlew --no-daemon distZip
 
       - name: Deploy to S3
         uses: prewk/s3-cp-action@v2
