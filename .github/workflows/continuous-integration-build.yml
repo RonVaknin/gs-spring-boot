@@ -28,9 +28,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Build Complete with Gradle
-#        working-directory: ./complete
-        run:
-          ./complete/gradlew --no-daemon distZip
+        working-directory: ./complete
+        run: |
+          ./gradlew --no-daemon distZip
 
       - name: Deploy to S3
         uses: prewk/s3-cp-action@v2
@@ -38,6 +38,6 @@ jobs:
           aws_access_key_id: ${{ secrets.S3_ACCESS_KEY }}
           aws_secret_access_key: ${{ secrets.S3_ACCESS_KEY_SECRET }}
 #          cp build/distributions/spring-boot-$TAG.zip s3://your-bucket-name/
-          source: build/distributions/spring-boot.zip
+          source: ./complete/build/distributions/spring-boot.zip
           dest: 's3://${{ secrets.S3_BUCKET_NAME}}/app-master.zip'
           aws_region: 'us-east-1'
